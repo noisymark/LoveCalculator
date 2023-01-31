@@ -21,3 +21,50 @@ color:white;
 .row{
     display:flex;
 }
+
+#form{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+form{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+form input{
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#submit{
+    background-color: rgba(255, 0, 0);
+    color: white;
+    border: 2px solid white;
+    font-size: 1.2rem;
+    height: 70px;
+    width: 140px;
+}
+#submit:hover{
+    background-color: rgba(255, 0, 0);
+    color: black;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    height: 70px;
+    width: 140px;
+}
+
+#result{
+    color:white;
+    transition-duration: 100ms;
+}
+
+#result:hover{
+    color:black;
+    font-size: 2.5rem;
+    transition-duration: 100ms;
+}
