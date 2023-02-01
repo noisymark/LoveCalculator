@@ -9,7 +9,11 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     echo '-' . $firstname . '-';
     echo '<br>';
     echo '-' . $secondname . '-';
-    Counter($firstname,$secondname);
+    $final = Counterr($firstname,$secondname);
+    echo '<pre>';
+    print_r($final);
+    echo '</pre>';
+    
 
 } else{
     $drugoime='';
