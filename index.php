@@ -1,23 +1,23 @@
 <?php
-require_once 'components/calculate.php';
 require_once 'components/count.php';
 if($_SERVER['REQUEST_METHOD']==='POST'){
-    $prvoime=strtoupper($_POST['prvoime']);
-    $drugoime=strtoupper($_POST['drugoime']);
-    $firstname=Calculate($prvoime);
-    $secondname=Calculate($drugoime);
-    echo '-' . $firstname . '-';
-    echo '<br>';
-    echo '-' . $secondname . '-';
+    $firstname = $_POST['prvoime'];
+    $secondname = $_POST['drugoime'];
+    // Pretvaranje slova u brojeve
     $final = Counterr($firstname,$secondname);
     echo '<pre>';
     print_r($final);
     echo '</pre>';
+    // Zbrajanje prvog i zadnjeg
+    $rezultat = Zbroji($final);
+    echo '<pre>';
+    print_r($rezultat);
+    echo '</pre>';
     
 
 } else{
-    $drugoime='';
     $prvoime='';
+    $drugoime='';
 }
 ?>
 

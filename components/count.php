@@ -1,25 +1,48 @@
 <?php
 
 function Counterr($ime,$imee){
-    $slijepljeno = $ime . $imee;
-    $sum='';
-    $i=1;
-    $array = str_split($slijepljeno);
+    $slijepljeno='';
+    //Povezivanje oba imena zajedno i pretvaranje u velika slova
+    $slijepljeno = (strtoupper($ime)) . (strtoupper($imee));
+
+    //Brojanje koliko slova ima u oba imena
+    $array=str_split($slijepljeno);
     for($i=0;$i<(strlen($slijepljeno));$i++){
-        $final[]= substr_count($slijepljeno,$array[$i]);
-    }
-    array_unshift($final,"");
-    unset($final[0]);
-
-    for($i=1;$i<=((int)(count($final))/2);$i++){
-        $zbrojdva = ($final[$i]) + ($final[-$i]);
-        echo $final[$i] . $final[-$i] . '<br>';
-        $sum = $sum . $zbrojdva;
+        $final[]=substr_count($slijepljeno,$array[$i]);
     }
 
-    echo '<br>' . $sum;
+    // Vraćanje u string
+    $final = implode('',$final);
 
     return $final;
+}
+
+function Zbroji($vrijednost){
+    if($vrijednost>100){
+        if(strlen($vrijednost)%2===0){
+            $j=1;
+            //Paran broj, samo uzimaj prvu i zadnju i ne brini se oko srednje jer se moze uzeti tocna polovica za izvodenje
+            $m = (int)((strlen($vrijednost))/2);
+                for($j=1;$j<$m;$j++){
+                    $y = $vrijednost[$j-1];
+                    $x = $vrijednost[strlen($vrijednost)-$j];
+                    $rezultat .= ($x+$y);
+                 }
+        } else{
+            //Neparan broj, uzimaj prvu i zadnju dok ne dodes do srednje te nju prepisi
+            $k=1;
+            $m = (int)((strlen($vrijednost))/2);
+            for($k=1;$k<$m;$k++){
+                $y = $vrijednost[$k-1];
+                $x = $vrijednost[strlen($vrijednost)-$k];
+                $rezultat .= ($x+$y);
+            }
+                $rezultat .= $vrijednost[$m];
+        }
+        echo $rezultat . '<br>';
+        return Zbroji($rezultat);
+        }
+    return $rezultat;
 }
 
 ?>
