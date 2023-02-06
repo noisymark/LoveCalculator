@@ -18,7 +18,9 @@ function Counterr($ime,$imee){
 }
 
 function Zbroji($vrijednost){
+    if(is_array($vrijednost)){implode('',$vrijednost);}
     if($vrijednost>100){
+        $rezultat=[];
         if(strlen($vrijednost)%2===0){
             $j=1;
             //Paran broj, samo uzimaj prvu i zadnju i ne brini se oko srednje jer se moze uzeti tocna polovica za izvodenje
@@ -26,7 +28,7 @@ function Zbroji($vrijednost){
                 for($j=1;$j<$m;$j++){
                     $y = $vrijednost[$j-1];
                     $x = $vrijednost[strlen($vrijednost)-$j];
-                    $rezultat .= ($x+$y);
+                    $rezultat[]= ($x+$y);
                  }
         } else{
             //Neparan broj, uzimaj prvu i zadnju dok ne dodes do srednje te nju prepisi
@@ -35,14 +37,17 @@ function Zbroji($vrijednost){
             for($k=1;$k<$m;$k++){
                 $y = $vrijednost[$k-1];
                 $x = $vrijednost[strlen($vrijednost)-$k];
-                $rezultat .= ($x+$y);
+                $rezultat[]= ($x+$y);
             }
-                $rezultat .= $vrijednost[$m];
+                $rezultat[]= $vrijednost[$m];
         }
-        echo $rezultat . '<br>';
-        return Zbroji($rezultat);
-        }
-    return $rezultat;
+        echo '<pre>';
+        print_r($rezultat) . '<br>';
+        echo '</pre>';
+    }
+    $rezultat = implode('',$rezultat);
+    return Zbroji($rezultat);
+    //return $vrijednost;
 }
 
 ?>
