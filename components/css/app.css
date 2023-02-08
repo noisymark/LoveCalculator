@@ -7,6 +7,17 @@ background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, F
 overflow-x:hidden;
 overflow-y: auto;
 color:white;
+animation: fadeInAnimation ease 3s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 #uvodnitext{
     padding-top: 16px;
@@ -64,6 +75,12 @@ form input{
 }
 
 #result:hover{
+    color:black;
+    font-size: 2.5rem;
+    transition-duration: 100ms;
+}
+
+#result:focus{
     color:black;
     font-size: 2.5rem;
     transition-duration: 100ms;
