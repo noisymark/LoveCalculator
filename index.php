@@ -5,8 +5,16 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $secondname = $_POST['drugoime'];
     // Pretvaranje slova u brojeve
     $final = Counterr($firstname,$secondname);
+    echo '<pre>';
+    print_r($final);
+    echo '</pre>';
     // Zbrajanje prvog i zadnjeg
     $rezultat = Zbroji($final);
+    echo '<pre>';
+    print_r($rezultat);
+    echo '</pre>';
+    
+
 } else{
     $prvoime='';
     $drugoime='';
@@ -28,16 +36,16 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             <div id="form" class="container">
             <form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
                 <label for="prvoime">Enter first name: </label>
-                <input type="text" name="prvoime" id="prvoime" value="<?=$firstname?>">
+                <input type="text" name="prvoime" id="prvoime">
                 <br><br>
                 <label for="drugoime">Enter second name: </label>
-                <input type="text" name="drugoime" id="drugoime" value="<?=$secondname?>">
+                <input type="text" name="drugoime" id="drugoime">
                 <br><br><br>
                 <input id="submit" type="submit" value="Calculate">
             </form>
             <?php if($unos!==0) : ?>
                 <br>
-                <h4 tabindex="0" id="result"><?php if(isset($rezultat)){echo $rezultat . '%';} ?></h4>
+                <h4 id="result">MATCH: 49%</h4>
                 <?php endif; ?>
             </div>
         </div>
