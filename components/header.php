@@ -5,4 +5,5 @@
     <title>LoveCalculator</title>
     <link rel="stylesheet" href="components/css/bootstrap.css">
     <link rel="stylesheet" href="components/css/app.css">
+    <link rel="shortcut icon" href="components/img/favicon.ico" type="image/x-icon">
 </head>

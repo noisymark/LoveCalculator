@@ -2,11 +2,23 @@
 body{
 font-family: 'Dosis', sans-serif;
 background: #C33764;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to right, #FC575E, #90D5EC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FC575E, #90D5EC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 overflow-x:hidden;
 overflow-y: auto;
 color:white;
+animation: fadeInAnimation ease 3s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 #uvodnitext{
     padding-top: 16px;
@@ -67,4 +79,21 @@ form input{
     color:black;
     font-size: 2.5rem;
     transition-duration: 100ms;
+}
+
+#result:focus{
+    color:black;
+    font-size: 2.5rem;
+    transition-duration: 100ms;
+}
+
+input#prvoime{
+    border-radius: 10px;
+    border: 2px solid blue;
+    background-color: #89cff0;
+}
+input#drugoime{
+    border-radius: 10px;
+    border: 2px solid RED;
+    background-color: #f4c2c2;
 }
