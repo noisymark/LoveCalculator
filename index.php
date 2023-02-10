@@ -1,13 +1,22 @@
 <?php
 require_once 'components/count.php';
+
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $firstname = $_POST['prvoime'];
     $secondname = $_POST['drugoime'];
+    // Ciscenje unosa od posebnih znakova i brojeva
+    $firstname = cleanInput($firstname);
+    $secondname = cleanInput($secondname);
+    // Provjeravanje da li su unosi prazni
+    if(($firstname==='' & $secondname==='')){
+        $errormsg = '<br>PLEASE ENTER VALUES IN BOTH FIELDS !';
+    } else{
     // Pretvaranje slova u brojeve
     $final = Counterr($firstname,$secondname);
     // Zbrajanje prvog i zadnjeg
     $rezultat = Zbroji($final);
     $rezultat = $rezultat . ' %';
+    }
 } else{
     $firstname='';
     $secondname='';
@@ -27,6 +36,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
 <div class="container">
     <div class="row text-center">
+        <h2><?=$errormsg?></h2>
         <div class="col-sm-4 col-md-4 col-xl-4"></div>
         <div class="col-sm-4 col-md-4 col-xl-4">
             <div id="form" class="container">

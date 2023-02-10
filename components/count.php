@@ -1,7 +1,14 @@
 <?php
 
+function cleanInput($input){
+    $output = preg_replace("/[^a-zA-Z]/", "", $input);
+
+    return $output;
+}
+
 function Counterr($ime,$imee){
     $slijepljeno='';
+    $final=[];
     //Povezivanje oba imena zajedno i pretvaranje u velika slova
     $slijepljeno = (strtoupper($ime)) . (strtoupper($imee));
 
