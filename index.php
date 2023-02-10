@@ -1,6 +1,8 @@
 <?php
 require_once 'components/count.php';
 
+$errormsg='';
+
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $firstname = $_POST['prvoime'];
     $secondname = $_POST['drugoime'];
@@ -23,6 +25,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $prvoime='';
     $drugoime='';
     $rezultat='';
+    $errormsg='';
 }
 ?>
 
